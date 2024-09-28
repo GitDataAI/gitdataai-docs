@@ -13,6 +13,6 @@ WORKDIR /docusaurus
 
 ADD . /
 
-RUN pnpm i
+RUN pnpm install
 
 RUN pnpm run start
