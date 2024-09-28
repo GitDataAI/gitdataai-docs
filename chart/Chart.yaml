@@ -1,0 +1,13 @@
+apiVersion: v2
+name: jiaozifs-docs
+description: Install jiaozifs-docs.
+version: 1.0.0
+home: https://docs.gitdata.ai/
+keywords:
+  - jiaozifs
+  - jiaozifs-docs
+sources:
+  - https://github.com/jiaozifs/jiaozifs
+  - https://github.com/jiaozifs/docs
+maintainers:
+  - name: jiaozifs team

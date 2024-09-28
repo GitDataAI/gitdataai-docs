@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jiaozifs-docs-deployment
+  labels:
+    apptype: jiaozifs-docs
+spec:
+  replicas: {{ .Values.replicas}}
+  selector:
+    matchLabels:
+      app: jiaozifs-docs
+  template:
+    metadata:
+      labels:
+        app: jiaozifs-docs
+        apptype: jiaozifs-docs
+    spec:
+      containers:
+        - name: jiaozifs-docs
+          image: gitdatateam/jiaozifs-docs:{{ .Values.tag }}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
