@@ -1,15 +1,26 @@
-FROM node:20
+FROM node:20-alpine3.17
 
-WORKDIR /app/website
+RUN npm install pnpm -g
 
-COPY website/package.json /app/website/
 
-RUN npm install
+RUN apk add --no-cache \
+    bash bash-completion supervisor \
+    autoconf automake build-base libtool nasm
 
-COPY website /app/website
+ENV TARGET_UID=1000
+ENV TARGET_GID=1000
+ENV VERSION=latest
+ENV WEBSITE_NAME='my-website'
+ENV TEMPLATE='classic'
 
-RUN npm build
+RUN mkdir /docusaurus
+WORKDIR /docusaurus
 
-FROM nginx:stable
+ADD script/init.sh /
+ADD script/run.sh /
+COPY script/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-COPY --from=0 /app/website/build /usr/share/nginx/html
+RUN chmod a+x /init.sh  /run.sh
+
+VOLUME [ "/docusaurus" ]
+ENTRYPOINT [ "/init.sh" ]
