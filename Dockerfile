@@ -1,14 +1,7 @@
-FROM node:20-alpine3.17 as builder
+FROM nginx:1.25.3
 
-RUN mkdir /docusaurus
-WORKDIR /docusaurus
+COPY build/. /usr/share/nginx/html
+COPY ./script/start.sh /docker-entrypoint.d/start.sh
+COPY ./script/nginx.conf /etc/nginx/nginx.conf
 
-COPY . .
-
-RUN npm install && npm run build
-
-FROM nginx:latest
-
-COPY --from=builder /docusaurus/build /usr/share/nginx/html
-
-CMD ["nginx", "-g", "daemon off;"]
+RUN chmod +x /docker-entrypoint.d/start.sh
