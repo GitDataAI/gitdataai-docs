@@ -17,7 +17,15 @@ Branches in JZFS are similar to branches in Git. They are pointers to commits th
 A commit in JZFS is created automatically whenever data is added to or deleted from a repository. Each commit preserves the state of all files in the repository at the time of the commit, similar to a snapshot. Each commit is uniquely identifiable by a UUID and is immutable, meaning that the source data can never change.
 
 ## JiaoZi Flow
-The JiaoZi Flow (JZFlow) is a core component of the GitData.AI's platform, designed to run robust data pipelines in a scalable and reproducible manner. With PPS, you can define, execute, and monitor complex data transformations using code that is run in Docker containers. The output of each pipeline is version-controlled in a JZFS data repository, providing a complete, auditable history of all processing steps. In this way, PPS provides a flexible, data-driven solution for managing your data processing needs, while keeping data and processing results secure, reproducible, and scalable.
+The JiaoZi Flow (JZFlow) is a critical piece of a MLOps system that manages, executes, and monitors workflow/pipeline automation. 
+
+> Workflow is an abstract and broad concept; it is essentially a sequence of operations that are part of some larger task. If you can devise a plan with a set of tasks to complete a work, this plan is a workflow. For example, we can define a sequential workflow for training a machine learning (ML) model. This workflow can be composed of the following tasks: fetching raw data, rebuilding the training dataset, training the model, evaluating the model, and deploying the model. 
+> 
+> In general, a workflow is a sequence of operations that are part of some larger task. A workflow can be viewed as a directed acyclic graph (DAG) of steps.
+
+With JZFlow, you can define, execute, and monitor complex data transformations using code that is run in Docker containers. The output of each pipeline is version-controlled in a JZFS data repository, providing a complete, auditable history of all processing steps. In this way, PPS provides a flexible, data-driven solution for managing your data processing needs, while keeping data and processing results secure, reproducible, and scalable.
+
+
 
 ### Pipelines
 JZFlow pipelines are used to transform data from JZFS repositories. The output data is versioned in a JZFS data repository, and the code for the transformation is run in Docker containers. Pipelines are triggered by new commits to a branch, making them data-driven.
