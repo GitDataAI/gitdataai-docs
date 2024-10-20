@@ -49,16 +49,35 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'cdm',
+        path: 'cdm',
+        routeBasePath: 'cdm',
+        sidebarPath: require.resolve('./sidebarscdm.ts'),
+        // ... other options
+      },
+    ],
+  ],
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'GitData.AI Docs',
+      title: 'Get started',
       logo: {
         alt: 'GitData.AI Logo',
         src: 'img/logo.svg',
       },
       items: [
+        {
+          to: '/cdm/', // To highlight the navbar item, you must link to a document, not a top-level directory
+          position: 'left',
+          label: 'Collaborative Dataset Management',
+          activeBaseRegex: `/cdm/`,
+        },
         {
           href: 'https://github.com/GitDataAI/docs',
           label: 'GitHub',

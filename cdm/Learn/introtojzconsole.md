@@ -1,8 +1,8 @@
 ---
-sidebar_position: 5
+sidebar_position: 4
 ---
 
-# Intro to JZHub
+# Intro to JZConsole
 
 Docusaurus is a **static-site-generator** (also called **[Jamstack](https://jamstack.org/)**).
 
