@@ -49,6 +49,9 @@ const config: Config = {
     ],
   ],
 
+// refer here:
+// 1.https://stackoverflow.com/questions/60783595/is-there-a-way-to-have-two-docs-in-docusaurus-2/68162605#68162605
+// 2.https://github.com/galligan/docusaurus-multi
   plugins: [
     [
       '@docusaurus/plugin-content-docs',
