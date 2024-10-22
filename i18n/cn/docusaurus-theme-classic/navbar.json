@@ -1,0 +1,18 @@
+{
+  "title": {
+    "message": "快速开始",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "GitData.AI Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Collaborative Dataset Management": {
+    "message": "数据集管理",
+    "description": "Navbar item with label Collaborative Dataset Management"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}

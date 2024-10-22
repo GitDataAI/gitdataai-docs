@@ -26,7 +26,7 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en','cn'],
   },
 
   presets: [
@@ -80,6 +80,10 @@ const config: Config = {
           position: 'left',
           label: 'Collaborative Dataset Management',
           activeBaseRegex: `/cdm/`,
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
         },
         {
           href: 'https://github.com/GitDataAI/docs',
